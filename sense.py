@@ -60,10 +60,12 @@ class message:
 
 
 # Setup Redis
+print( "Connecting to redis at: " + str( REDIS_HOST ) + ":" + str( REDIS_PORT ) )
 r = redis.Redis(host=REDIS_HOST, port=REDIS_PORT, db=0)
 p = r.pubsub(ignore_subscribe_messages=True)
 
 # Init the sense hat
+print( "Setting up SenseHat" )
 sense = SenseHat()
 sense.clear()
 
