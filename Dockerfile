@@ -11,4 +11,4 @@ RUN pip3 install -r requirements.txt
 
 COPY . .
 
-CMD [ "python3", "./sense.py" ]
+CMD [ "python3", "-u", "./sense.py" ]

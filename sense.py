@@ -68,6 +68,7 @@ p = r.pubsub(ignore_subscribe_messages=True)
 print( "Setting up SenseHat" )
 sense = SenseHat()
 sense.clear()
+sense.show_message("Hello world!")
 
 # Setup loop
 old_orientation = message("ORIENTATION", orientation(0,0,0) )
@@ -75,7 +76,7 @@ old_acceleration = message("ACCELERATION", orientation(0,0,0) )
 old_compass = message( "COMPASS", compass( 0 ) )
 
 
-print( "Starting:" )
+print( "Starting loop" )
 while True:
   sense.set_imu_config( False, True, True )
   o = sense.get_orientation_degrees()
