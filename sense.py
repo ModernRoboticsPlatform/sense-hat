@@ -2,6 +2,11 @@ from sense_hat import SenseHat
 import redis
 from time import sleep
 import json
+import os
+
+REDIS_HOST = os.getenv('REDIS_HOST', default="redis" )
+REDIS_PORT = os.getenv('REDIS_PORT', default=6379 )
+
 
 #
 # orientation
@@ -55,7 +60,7 @@ class message:
 
 
 # Setup Redis
-r = redis.Redis(host='redis', port=6379, db=0)
+r = redis.Redis(host=REDIS_HOST, port=REDIS_PORT, db=0)
 p = r.pubsub(ignore_subscribe_messages=True)
 
 # Init the sense hat
