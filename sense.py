@@ -68,7 +68,7 @@ p = r.pubsub(ignore_subscribe_messages=True)
 print( "Setting up SenseHat" )
 sense = SenseHat()
 sense.clear()
-sense.show_message("Hello world!")
+sense.show_message("|")
 
 # Setup loop
 old_orientation = message("ORIENTATION", orientation(0,0,0) )
